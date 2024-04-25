@@ -158,7 +158,7 @@ async function callButtonPrompt(sourceLabels, targetLabels, prompt, input, brief
 
 const app = express();
 app.use(bodyParser.json());
-const allowedOrigins = 'https://guai-client.vercel.app'
+const allowedOrigins = 'https://stormboard.vercel.app/'
 // const allowedOrigins = 'http://localhost:5173'
 const corsOptions = {
   origin: allowedOrigins,
