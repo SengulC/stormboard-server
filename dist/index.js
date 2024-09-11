@@ -38309,7 +38309,7 @@ async function callButtonPrompt(prompt, input, brief, nodes) {
         { role: "system", content: instruction },
         { role: "user", content }
       ],
-      model: "gpt-4"
+      model: "gpt-4o-mini"
     });
     console.log("Sent init instructions. Called gpt with brief: " + brief + ", and: " + content);
     console.log("Got back: " + JSON.stringify(completion.choices[0]));
@@ -38317,7 +38317,7 @@ async function callButtonPrompt(prompt, input, brief, nodes) {
   } else {
     const completion = await openai.chat.completions.create({
       messages: [{ role: "user", content }],
-      model: "gpt-4"
+      model: "gpt-4o-mini"
     });
     console.log("Called gpt with: " + content);
     console.log("Got back: " + JSON.stringify(completion.choices[0]));

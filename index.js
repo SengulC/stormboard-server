@@ -24,7 +24,7 @@ async function callCharChange(char) {
   if (char=='off') {
     const completion = await openai.chat.completions.create({
       messages: [{role: "user", content: 'Moving forward, respond in a natural tone. Respond now with just "Okay"'}],
-      model: "gpt-4",
+      model: "gpt-4o-mini",
     }); // API USAGE
     console.log("CHARCHANGE OFF. Called gpt with : " + 'Moving forward, respond in a natural tone. Respond now with just "Okay"');
     console.log("Got back: " + JSON.stringify(completion.choices[0].message.content));
@@ -42,7 +42,7 @@ async function callCharChange(char) {
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: prePrompt},
                  {role: "user", content: prompt}],
-      model: "gpt-4",
+      model: "gpt-4o-mini",
     }); // API USAGE
     console.log("CHARCHANGE. Called gpt with : " + prompt);
     console.log("Got back: " + JSON.stringify(completion.choices[0].message.content));
@@ -140,7 +140,7 @@ async function callButtonPrompt(sourceLabels, targetLabels, prompt, input, brief
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: instruction},
                  {role: "user", content: content}],
-      model: "gpt-4",
+      model: "gpt-4o-mini",
     });
     console.log("Sent init instructions. Called gpt with brief: " + brief + ", and: " + content);
     console.log("Got back: " + JSON.stringify(completion.choices[0].message.content));
@@ -148,7 +148,7 @@ async function callButtonPrompt(sourceLabels, targetLabels, prompt, input, brief
   } else {
     const completion = await openai.chat.completions.create({
       messages: [{role: "user", content: content}],
-      model: "gpt-4",
+      model: "gpt-4o-mini",
     });
     console.log("Called gpt with: " + content);
     console.log("Got back: " + JSON.stringify(completion.choices[0].message.content));
