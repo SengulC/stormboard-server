@@ -36,7 +36,7 @@ async function callCharChange(char) {
     The Realistic tone's responses should be: straightforward, coherent, precise and realistic. 
     The Abstract tone's responses should be: descriptive, creative, a little random, and abstract in nature.`
     let prompt = `For following responses, change tone to ${char}.  Respond now with just "Okay"` 
-    // `For now, respond with a VARIANT of the following JSON object: {preWhat: 'I am creating a', preWho: 'for', preWhere: 'to use in', preWhy: 'to'}, 
+    // `For now, respond with a VARIANT of the following JSONobject: {preWhat: 'I am creating a', preWho: 'for', preWhere: 'to use in', preWhy: 'to'}, 
     // Make sure your tone matches the desired, ${char}, and is max 4 words for each.
     // `;
     const completion = await openai.chat.completions.create({
